@@ -90,3 +90,17 @@ class Options {
 
   Options({required this.renderNode, this.renderMark});
 }
+
+class StylingOptions {
+  final ParagraphOptions? paragraphOptions;
+
+  StylingOptions({this.paragraphOptions});
+}
+
+class ParagraphOptions {
+  final TextAlign textAlign;
+
+  ParagraphOptions({
+    this.textAlign = TextAlign.start,
+  });
+}
