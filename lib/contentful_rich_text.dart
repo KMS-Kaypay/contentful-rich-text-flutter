@@ -15,6 +15,7 @@ import 'package:contentful_rich_text/widgets/paragraph.dart';
 import 'package:contentful_rich_text/widgets/unordered_list.dart';
 import 'package:flutter/material.dart';
 import 'package:html_unescape/html_unescape_small.dart';
+import 'package:provider/provider.dart';
 
 /// Contentful Rich Text widget
 class ContentfulRichText {
@@ -112,8 +113,11 @@ class ContentfulRichText {
         options?.renderMark?.renderMarks,
       );
 
-      return Container(
-        child: nodeListToWidget(richTextDocument?.content ?? []),
+      return Provider.value(
+        value: stylingOptions,
+        child: Container(
+          child: nodeListToWidget(richTextDocument?.content ?? []),
+        ),
       );
     }
     return Container();
