@@ -27,7 +27,7 @@ class Hyperlink extends TextSpan {
               // NOTE: Defaults to Url_Launcher, but component can be overridden
               final uri = Uri.tryParse(node['data']['uri']);
               if (uri != null && await canLaunchUrl(uri)) {
-                await launchUrl(uri);
+                await launchUrl(uri, mode: LaunchMode.externalApplication);
               }
             },
         );
