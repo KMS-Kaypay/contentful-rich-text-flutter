@@ -84,8 +84,13 @@ class ContentfulRichText {
   dynamic richTextJson;
   Options? options;
   Document? richTextDocument;
+  final StylingOptions? stylingOptions;
 
-  ContentfulRichText(this.richTextJson, {this.options});
+  ContentfulRichText(
+    this.richTextJson, {
+    this.options,
+    this.stylingOptions,
+  });
 
   /// This is the main entry point for ContentfulRichText. To render
   /// Flutter widgets, in your app instantiate ContentfulRichText with
